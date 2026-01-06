@@ -114,11 +114,11 @@ export function Button({
       <div
         className={cn(
           "relative flex h-full w-full items-center justify-center gap-2 border px-4 py-2",
-          variant === "default" && "border-slate-800 bg-slate-900/[0.8]",
-          variant === "primary" && "border-primary bg-primary/[0.8]",
-          variant === "secondary" && "border-secondary bg-secondary/[0.8]",
-          variant === "destructive" && "border-destructive bg-destructive/[0.8]",
-          variant === "outline" && "border-border bg-background/[0.8]",
+          variant === "default" && "border-slate-800 bg-slate-900/80",
+          variant === "primary" && "border-primary bg-primary/80",
+          variant === "secondary" && "border-secondary bg-secondary/80",
+          variant === "destructive" && "border-destructive bg-destructive/80",
+          variant === "outline" && "border-border bg-background/80",
           "[&_img]:size-6 [&_img]:rounded-full [&_img]:object-cover",
           "[&_svg]:size-5 [&_svg]:shrink-0",
           className,
