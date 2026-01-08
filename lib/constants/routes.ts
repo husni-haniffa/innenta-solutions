@@ -6,3 +6,6 @@ export const routes = [
     { id: "contactus", label: "Contact us", type: "scroll" },
 ]
 
+export const handleBooking = () => {
+    window.open("https://calendly.com/mulhimajawahir/", "_blank", "noopener,noreferrer")
+}

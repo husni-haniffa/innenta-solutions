@@ -1,10 +1,11 @@
 import { howItWorks } from '@/lib/constants/how-it-works'
 import { Button } from '../ui/moving-border'
 import Image from 'next/image'
-
+import { motion } from 'framer-motion'
+import { handleBooking } from '@/lib/constants/routes'
 const HowItWorks = () => {
   return (
-    <div className='flex flex-col gap-9' id='howitworks'>
+    <div className='flex flex-col gap-9 scroll-mt-24' id='howitworks'>
         <div className='flex justify-center items-center'>
           <header className='text-center border w-fit px-4 py-2 rounded-lg text-lg'>How it works</header>
         </div>
@@ -16,7 +17,10 @@ const HowItWorks = () => {
                 We follow clear steps to deliver high-quality outcomes without complexity.
             </p>
         </div>
-        <div className='grid grid-cols-1 md:grid-cols-3 gap-3'>
+        <motion.div className='grid grid-cols-1 md:grid-cols-3 gap-3'   initial={{ opacity: 0, y: 50 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ amount: 0.3 }}
+  transition={{ duration: 0.6, ease: "easeOut" }}>
             {howItWorks.map((work) => (
               <div key={work.id} className="flex flex-col justify-start items-center border rounded-lg px-6 py-8">
                 <div className="flex flex-col gap-4 items-center text-center mb-4">
@@ -32,18 +36,21 @@ const HowItWorks = () => {
                 </p>
               </div>
             ))}
-        </div>
-        <div className='flex justify-center items-center py-6'>
-          <Button size={'xl'}>
-            <Image 
-              src={'/founder.jpeg'} 
-              alt='Innenta Solutions Logo' 
-              width={25} 
-              height={25}
-              className='rounded-full'/> 
-              Book a call with Mulhima
-          </Button>
-        </div>
+        </motion.div>
+        <motion.div className='flex justify-center items-center py-6'
+        whileHover={{scale: 1.1}}
+        whileTap={{scale: 0.9}}
+        >
+            <Button size={'xl'} onClick={() => handleBooking()}>
+              <Image 
+                src={'/founder.jpeg'} 
+                alt='Founder Image' 
+                width={25} 
+                height={25}
+                className='rounded-full'/> 
+                Book a call with Mulhima
+            </Button>
+        </motion.div>
     </div>
   )
 }

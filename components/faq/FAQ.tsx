@@ -6,10 +6,10 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
-import Testimonials from '../testimonials/Testimonials'
+import Testimonials from '../testimonials/Testimonials '
 const FAQ = () => {
   return (
-    <div className=' min-h-screen flex flex-col gap-9'>
+    <div className='flex flex-col gap-9'>
 <div className='flex justify-center items-center'>
             <header className='text-center border w-fit px-4 py-2 rounded-lg text-lg'>
               FAQs
@@ -36,7 +36,7 @@ const FAQ = () => {
 </Accordion>
         ))}
         </div>
-        <div>
+        <div className='py-8'>
           <Testimonials/>
         </div>
         

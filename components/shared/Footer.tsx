@@ -1,12 +1,34 @@
+"use client"
 import { contacts } from '@/lib/constants/contacts'
 import { legal } from '@/lib/constants/legal'
 import { resources } from '@/lib/constants/resources'
 import { routes } from '@/lib/constants/routes'
 import { socials } from '@/lib/constants/social'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 
 
 const Footer = () => {
+  const router = useRouter()
+  const handleNavigate = (
+  id: string,
+  router: ReturnType<typeof useRouter>
+) => {
+  // Always update the URL first
+  if (window.location.pathname !== "/") {
+    router.push(`/#${id}`)
+  } else {
+    // Update hash without triggering a page reload
+    window.history.replaceState(null, '', `#${id}`)
+    
+    // Scroll to element
+    const element = document.getElementById(id)
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" })
+    }
+  }
+}
+
   return (
     <footer className='w-full border-t py-6'>
       
@@ -39,7 +61,13 @@ const Footer = () => {
           <header className='font-semibold'>Company</header>
           <div className='flex flex-col gap-1'>
    {routes.map((route) => (
-               <button key={route.id} className='text-left text-muted-foreground hover:text-white '>{route.label}</button>
+               <button key={route.id} className='text-left text-muted-foreground hover:text-white ' onClick={() => {
+                if (route.type === "scroll") {
+                  handleNavigate(route.id, router)
+                } else {
+                  router.push(route.id)
+                }
+              }}>{route.label}</button>
              ))}
           </div>
          
@@ -113,7 +141,8 @@ const Footer = () => {
       {/* Social icons */}
       <div className="flex gap-4 md:justify-end">
         {socials.map((media) => (
-          <Link key={media.id} href={media.href}>
+          <Link key={media.id} href={media.href}  target="_blank"
+  rel="noopener noreferrer">
             <media.icon size={22} />
           </Link>
         ))}

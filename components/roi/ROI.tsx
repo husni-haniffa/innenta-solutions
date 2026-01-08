@@ -1,4 +1,5 @@
 import { rois } from '@/lib/constants/rois'
+import { motion } from 'framer-motion'
 import React from 'react'
 
 const ROI = () => {
@@ -17,9 +18,16 @@ const ROI = () => {
               The Best reutn in numbers
             </p>
         </div>
-       <div className='grid grid-cols-1 md:grid-cols-3 gap-3'>
-  {rois.map((roi) => (
-    <div key={roi.id} className="flex flex-col justify-start border-b border-blue-500 rounded-lg px-6 py-8">
+       <motion.div className='grid grid-cols-1 md:grid-cols-3 gap-3'>
+  {rois.map((roi, index) => (
+    <motion.div
+      key={roi.id}
+      initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ amount: 0.3 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className="flex flex-col justify-start border-b border-blue-500 rounded-lg px-6 py-8"
+    >
       <div className="flex items-center gap-4 mb-4">
         <div className="text-blue-500 shrink-0">
           <roi.icon size={48} strokeWidth={1.5} />
@@ -31,9 +39,10 @@ const ROI = () => {
       <p className="text-muted-foreground text-sm md:text-base">
         {roi.description}
       </p>
-    </div>
+    </motion.div>
   ))}
-</div>
+</motion.div>
+
     </div>
   )
 }
