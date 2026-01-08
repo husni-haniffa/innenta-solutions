@@ -6,7 +6,7 @@ const Services = () => {
   const middleIndex = Math.floor(services.length / 2)
 
   return (
-    <div className='min-h-screen flex flex-col gap-9' id='services'>
+    <div className='min-h-screen flex flex-col gap-9 scroll-mt-24' id='services'>
       {/* Header */}
       <div className='flex justify-center items-center'>
         <header className='text-center border w-fit px-4 py-2 rounded-lg text-lg'>Services</header>

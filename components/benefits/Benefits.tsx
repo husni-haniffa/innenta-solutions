@@ -4,10 +4,11 @@ import { Button } from '../ui/moving-border'
 import { benefits } from '@/lib/constants/benefits'
 import ROI from '../roi/ROI'
 import { motion } from 'framer-motion'
+import { handleBooking } from '@/lib/constants/routes'
 
 const Benefits = () => {
   return (
-    <div className='min-h-screen flex flex-col gap-9 py-28' id='benefits'>
+    <div className='min-h-screen flex flex-col gap-9 py-32' id='benefits'>
         <motion.div className='flex justify-center items-center'  initial={{ opacity: 0, y: -50 }}
 whileInView={{ opacity: 1, y: 0 }}
 viewport={{ amount: 0.1 }}
@@ -33,7 +34,7 @@ transition={{ duration: 0.6, ease: "easeOut" }}>
   viewport={{ amount: 0.3 }}
   variants={{
     hidden: {},
-    visible: { transition: { staggerChildren: 0.6 } }
+    visible: { transition: { staggerChildren: 0.3 } }
   }}>
             {benefits.map((benefit) => (
               <motion.div key={benefit.id} className="flex flex-col justify-start items-center border hover:border-blue-500 rounded-lg px-6 py-8"  variants={{
@@ -56,14 +57,14 @@ transition={{ duration: 0.6, ease: "easeOut" }}>
         </motion.div>
 
 
-        <div className='py-24'>
+        <div className='py-16'>
           <ROI/>
         </div>
-        <motion.div className='flex justify-center items-center py-6'
+        <motion.div className='flex justify-center items-center'
         whileHover={{scale: 1.1}}
         whileTap={{scale: 0.9}}
         >
-            <Button size={'xl'}>
+            <Button size={'xl'} onClick={() => handleBooking()}>
               <Image 
                 src={'/founder.jpeg'} 
                 alt='Founder Image' 

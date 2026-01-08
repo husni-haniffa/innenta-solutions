@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { services } from '@/lib/constants/services'
 import { Label } from '../ui/label'
 import { motion } from 'framer-motion'
+import { handleBooking } from '@/lib/constants/routes'
 const Hero = () => {
   return (
     <div className='min-h-screen'>
@@ -35,7 +36,7 @@ transition={{ duration: 0.6, ease: "easeOut" }}>
         whileHover={{scale: 1.1}}
         whileTap={{scale: 0.9}}
         >
-            <Button size={'xl'}>
+            <Button size={'xl'} onClick={() => handleBooking()}>
               <Image 
                 src={'/founder.jpeg'} 
                 alt='Founder Image' 

@@ -8,7 +8,10 @@ import { motion } from "framer-motion";
 
 const Portfolio = () => {
   return (
-    <div className='min-h-screen container'>
+    <motion.div className='min-h-screen container flex flex-col gap-9 py-16'  initial={{ opacity: 0, y: -50 }}
+whileInView={{ opacity: 1, y: 0 }}
+viewport={{ amount: 0.1 }}
+transition={{ duration: 0.7, ease: "easeOut" }}>
       <div className='flex justify-center items-center'>
             <header className='text-center border w-fit px-4 py-2 rounded-lg text-lg'>
               Portfoilo
@@ -54,7 +57,7 @@ const Portfolio = () => {
                         ))
                     }
                 </div>
-    </div>
+    </motion.div>
   )
 }
 

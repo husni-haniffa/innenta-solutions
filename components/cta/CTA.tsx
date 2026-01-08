@@ -2,6 +2,7 @@ import React from 'react'
 import { Button } from '../ui/moving-border'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
+import { handleBooking } from '@/lib/constants/routes'
 const CTA = () => {
   return (
    <div className='flex flex-col justify-center items-center border border-gray-800 rounded-xl p-6 h-full bg-black/20 gap-4'>
@@ -15,7 +16,7 @@ const CTA = () => {
         whileHover={{scale: 1.1}}
         whileTap={{scale: 0.9}}
         >
-            <Button size={'xl'}>
+            <Button size={'xl'} onClick={() => handleBooking()}>
               <Image 
                 src={'/founder.jpeg'} 
                 alt='Founder Image' 

@@ -2,9 +2,10 @@ import { howItWorks } from '@/lib/constants/how-it-works'
 import { Button } from '../ui/moving-border'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
+import { handleBooking } from '@/lib/constants/routes'
 const HowItWorks = () => {
   return (
-    <div className='flex flex-col gap-9' id='howitworks'>
+    <div className='flex flex-col gap-9 scroll-mt-24' id='howitworks'>
         <div className='flex justify-center items-center'>
           <header className='text-center border w-fit px-4 py-2 rounded-lg text-lg'>How it works</header>
         </div>
@@ -40,7 +41,7 @@ const HowItWorks = () => {
         whileHover={{scale: 1.1}}
         whileTap={{scale: 0.9}}
         >
-            <Button size={'xl'}>
+            <Button size={'xl'} onClick={() => handleBooking()}>
               <Image 
                 src={'/founder.jpeg'} 
                 alt='Founder Image' 

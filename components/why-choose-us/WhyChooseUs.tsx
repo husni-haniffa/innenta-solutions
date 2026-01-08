@@ -1,26 +1,27 @@
 import { whyChooseUs } from '@/lib/constants/why-choose-us'
 import { Check } from 'lucide-react'
 import { motion } from 'framer-motion'
+import FAQ from '../faq/FAQ'
 
 
 const WhyChooseUs = () => {
   return (
 
-    <div className='min-h-screen'>
+    <div className='min-h-screen flex flex-col gap-9'>
        <div className='flex justify-center items-center'>
             <header className='text-center border w-fit px-4 py-2 rounded-lg text-lg'>
-              Benefits
+              Compare
             </header>
         </div>
         <div className='flex flex-col gap-6'>
             <header className='text-center font-bold text-3xl md:text-4xl lg:text-5xl'>
-              Membership Benefits
+              Why Choose Us
             </header>
             <p className='text-center'>
               Thoughtfully crafted perks that support long-term growth.
             </p>
         </div>
-        <motion.div className='grid grid-cols-1 md:grid-cols-3 gap-3'  initial={{ opacity: 0, scale: 0.8 }}
+        <motion.div className='grid grid-cols-1 md:grid-cols-3 gap-6'  initial={{ opacity: 0, scale: 0.8 }}
   whileInView={{ opacity: 1, scale: 1 }}
   viewport={{ amount: 0.3 }}
   transition={{ duration: 0.5, ease: "easeOut" }}>
@@ -49,6 +50,9 @@ const WhyChooseUs = () => {
 ))}
 
     </motion.div>
+    <div className='py-16'>
+          <FAQ/>
+    </div>
     </div>
     
   )

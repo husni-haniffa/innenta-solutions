@@ -1,4 +1,4 @@
-import { testomonials } from '@/lib/constants/testomonials'
+import { testimonials } from '@/lib/constants/testimonials'
 import React from 'react'
 import MarqueeRow from '../trust/MarqueeRow'
 import Image from 'next/image'
@@ -16,9 +16,9 @@ const Testimonials = () => {
         </div>
         <div>
             <MarqueeRow 
-      items={testomonials.map((client) => (
-        <div key={client.id} className='border px-4 py-4 rounded-xl'>
-            <p className='text-muted-foreground'>"{client.review}"</p>
+      items={testimonials.map((testimonial) => (
+        <div key={testimonial.id} className='border px-4 py-4 rounded-xl'>
+            <p className='text-muted-foreground'>"{testimonial.review}"</p>
             
             <div className='flex gap-2 py-4'>
                <Image 
@@ -29,9 +29,9 @@ const Testimonials = () => {
                                       className='rounded-full'/> 
               <div className='flex flex-col'>
               <header className=''>
-              {client.name}
+              {testimonial.name}
               </header>
-              <p className='font-semibold'>{client.position} @{client.client}</p>
+              <p className='font-semibold'>{testimonial.position} @{testimonial.client}</p>
               </div>
               
             </div>
