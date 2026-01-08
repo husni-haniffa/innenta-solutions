@@ -9,6 +9,8 @@ import { Menu, X } from 'lucide-react'
 import MobileNavbar from './MobileNavbar'
 import { useRouter } from 'next/navigation'
 import {AnimatePresence, motion } from 'framer-motion'
+
+
 // Navbar.tsx
 const Navbar = () => {
   const [open, setOpen] = useState(false)
@@ -39,8 +41,8 @@ const Navbar = () => {
 
   
   return (
-    <div className='sticky top-0 z-50 w-full'>
-      <nav className='container flex justify-between items-center py-4 border rounded-2xl bg-black backdrop-blur-sm'>
+    <div className='fixed top-0 left-0 right-0 z-50 w-full'>
+      <nav className='px-4 md:container flex justify-between items-center py-4 border-b bg-black backdrop-blur-sm'>
         <div className='flex gap-2 cursor-pointer' onClick={() => router.push('/')}>
           <Image src={'/innenta-solutions-logo.png'} alt='Innenta Solutions Logo' width={25} height={25}/>
           <header className='text-xl font-bold md:text-2xl'>Innenta Solutions</header>
