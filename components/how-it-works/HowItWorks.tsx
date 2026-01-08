@@ -16,7 +16,10 @@ const HowItWorks = () => {
                 We follow clear steps to deliver high-quality outcomes without complexity.
             </p>
         </div>
-        <div className='grid grid-cols-1 md:grid-cols-3 gap-3'>
+        <motion.div className='grid grid-cols-1 md:grid-cols-3 gap-3'   initial={{ opacity: 0, y: 50 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ amount: 0.3 }}
+  transition={{ duration: 0.6, ease: "easeOut" }}>
             {howItWorks.map((work) => (
               <div key={work.id} className="flex flex-col justify-start items-center border rounded-lg px-6 py-8">
                 <div className="flex flex-col gap-4 items-center text-center mb-4">
@@ -32,7 +35,7 @@ const HowItWorks = () => {
                 </p>
               </div>
             ))}
-        </div>
+        </motion.div>
         <motion.div className='flex justify-center items-center py-6'
         whileHover={{scale: 1.1}}
         whileTap={{scale: 0.9}}

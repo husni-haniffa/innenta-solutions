@@ -8,22 +8,38 @@ import { motion } from 'framer-motion'
 const Benefits = () => {
   return (
     <div className='min-h-screen flex flex-col gap-9 py-28' id='benefits'>
-        <div className='flex justify-center items-center'>
+        <motion.div className='flex justify-center items-center'  initial={{ opacity: 0, y: -50 }}
+whileInView={{ opacity: 1, y: 0 }}
+viewport={{ amount: 0.1 }}
+transition={{ duration: 0.7, ease: "easeOut" }}>
             <header className='text-center border w-fit px-4 py-2 rounded-lg text-lg'>
               Benefits
             </header>
-        </div>
-        <div className='flex flex-col gap-6'>
+        </motion.div>
+        <motion.div className='flex flex-col gap-6' initial={{ opacity: 0, y: 50 }}
+whileInView={{ opacity: 1, y: 0 }}
+viewport={{ amount: 0.2 }}
+transition={{ duration: 0.6, ease: "easeOut" }}>
             <header className='text-center font-bold text-3xl md:text-4xl lg:text-5xl'>
               Membership Benefits
             </header>
             <p className='text-center'>
               Thoughtfully crafted perks that support long-term growth.
             </p>
-        </div>
-        <div className='grid grid-cols-1 md:grid-cols-3 gap-3'>
+        </motion.div>
+
+        <motion.div className='grid grid-cols-1 md:grid-cols-3 gap-3'   initial="hidden"
+  whileInView="visible"
+  viewport={{ amount: 0.3 }}
+  variants={{
+    hidden: {},
+    visible: { transition: { staggerChildren: 0.6 } }
+  }}>
             {benefits.map((benefit) => (
-              <div key={benefit.id} className="flex flex-col justify-start items-center border hover:border-blue-500 rounded-lg px-6 py-8">
+              <motion.div key={benefit.id} className="flex flex-col justify-start items-center border hover:border-blue-500 rounded-lg px-6 py-8"  variants={{
+        hidden: { opacity: 0, y: 50 },
+        visible: { opacity: 1, y: 0 }
+      }}>
                 <div className="flex flex-col gap-4 items-center text-center mb-4">
                   <div className="text-blue-500">
                     <benefit.icon size={75} strokeWidth={1.5} />
@@ -35,9 +51,11 @@ const Benefits = () => {
                 <p className="text-muted-foreground text-sm md:text-base text-center">
                   {benefit.description}
                 </p>
-              </div>
+              </motion.div>
             ))}
-        </div>
+        </motion.div>
+
+
         <div className='py-24'>
           <ROI/>
         </div>

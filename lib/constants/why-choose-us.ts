@@ -2,6 +2,17 @@ import { Check, X } from "lucide-react";
 
 export const whyChooseUs = [
     {
+        id: "freelancers",
+        title: "Freelancers",
+        items: [
+            { icon: X, text: "Uncertain start times" },
+            { icon: X, text: "Hourly billing & scope creep" },
+            { icon: X, text: "Inconsistent quality" },
+            { icon: X, text: "Requires constant follow-ups" },
+            { icon: X, text: "No long-term reliability" },
+        ],
+    },
+    {
         id: "innenta",
         title: "Innenta",
         highlight: true,
@@ -13,17 +24,7 @@ export const whyChooseUs = [
             { icon: Check, text: "Scalable, long-term partnership" },
         ],
     },
-    {
-        id: "freelancers",
-        title: "Freelancers",
-        items: [
-            { icon: X, text: "Uncertain start times" },
-            { icon: X, text: "Hourly billing & scope creep" },
-            { icon: X, text: "Inconsistent quality" },
-            { icon: X, text: "Requires constant follow-ups" },
-            { icon: X, text: "No long-term reliability" },
-        ],
-    },
+
     {
         id: "agencies",
         title: "Agencies",

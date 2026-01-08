@@ -1,6 +1,7 @@
 import { whyChooseUs } from '@/lib/constants/why-choose-us'
 import { Check } from 'lucide-react'
-import React from 'react'
+import { motion } from 'framer-motion'
+
 
 const WhyChooseUs = () => {
   return (
@@ -19,7 +20,10 @@ const WhyChooseUs = () => {
               Thoughtfully crafted perks that support long-term growth.
             </p>
         </div>
-        <div className='grid grid-cols-1 md:grid-cols-3 gap-3'>
+        <motion.div className='grid grid-cols-1 md:grid-cols-3 gap-3'  initial={{ opacity: 0, scale: 0.8 }}
+  whileInView={{ opacity: 1, scale: 1 }}
+  viewport={{ amount: 0.3 }}
+  transition={{ duration: 0.5, ease: "easeOut" }}>
       {whyChooseUs.map((column) => (
   <div
     key={column.id}
@@ -44,7 +48,7 @@ const WhyChooseUs = () => {
   </div>
 ))}
 
-    </div>
+    </motion.div>
     </div>
     
   )

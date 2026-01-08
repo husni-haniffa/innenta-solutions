@@ -8,7 +8,7 @@ import { Button } from '../ui/moving-border'
 import { Menu, X } from 'lucide-react'
 import MobileNavbar from './MobileNavbar'
 import { useRouter } from 'next/navigation'
-
+import {AnimatePresence, motion } from 'framer-motion'
 const Navbar = () => {
   const [open, setOpen] = useState(false)
   const router = useRouter()
@@ -57,12 +57,20 @@ const Navbar = () => {
           <Button size={'default'} className='text-lg'>Book a call</Button>
         </div>
         <div className='flex md:hidden'>
-            <Button onClick={handleClick} size={'icon'}>{open ? <X/> : <Menu/>}</Button>
+            <Button onClick={handleClick} size={'icon'}>
+                  <motion.div
+            key={open ? 'close' : 'menu'}
+            animate={{ rotate: open ? 90 : 0 }} // rotate 90deg when open
+            transition={{ duration: 0.3, ease: 'easeInOut' }}
+            className='flex items-center justify-center'
+          >
+            {open ? <X /> : <Menu />}
+          </motion.div></Button>
         </div>
       </nav>
-      {open && (
-        <MobileNavbar/>
-      )}
+      <AnimatePresence>
+  {open && <MobileNavbar />}
+</AnimatePresence>
     </div>
   )
 }
