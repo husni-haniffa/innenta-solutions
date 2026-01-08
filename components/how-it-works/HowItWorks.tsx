@@ -1,7 +1,7 @@
 import { howItWorks } from '@/lib/constants/how-it-works'
 import { Button } from '../ui/moving-border'
 import Image from 'next/image'
-
+import { motion } from 'framer-motion'
 const HowItWorks = () => {
   return (
     <div className='flex flex-col gap-9' id='howitworks'>
@@ -33,17 +33,20 @@ const HowItWorks = () => {
               </div>
             ))}
         </div>
-        <div className='flex justify-center items-center py-6'>
-          <Button size={'xl'}>
-            <Image 
-              src={'/founder.jpeg'} 
-              alt='Innenta Solutions Logo' 
-              width={25} 
-              height={25}
-              className='rounded-full'/> 
-              Book a call with Mulhima
-          </Button>
-        </div>
+        <motion.div className='flex justify-center items-center py-6'
+        whileHover={{scale: 1.1}}
+        whileTap={{scale: 0.9}}
+        >
+            <Button size={'xl'}>
+              <Image 
+                src={'/founder.jpeg'} 
+                alt='Founder Image' 
+                width={25} 
+                height={25}
+                className='rounded-full'/> 
+                Book a call with Mulhima
+            </Button>
+        </motion.div>
     </div>
   )
 }

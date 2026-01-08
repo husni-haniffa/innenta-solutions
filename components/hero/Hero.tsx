@@ -4,7 +4,7 @@ import Trust from '../trust/Trust'
 import Image from 'next/image'
 import { services } from '@/lib/constants/services'
 import { Label } from '../ui/label'
-
+import { motion } from 'framer-motion'
 const Hero = () => {
   return (
     <div className='min-h-screen'>
@@ -21,17 +21,20 @@ const Hero = () => {
                     </div>
                 ))}
             </div>
-            <div className='py-6'>
-                <Button size={'xl'}>
-                    <Image 
-                        src={'/founder.jpeg'} 
-                        alt='Innenta Solutions Logo' 
-                        width={25} 
-                        height={25}
-                        className='rounded-full'/> 
-                        Book a call with Mulhima
-                </Button>
-            </div>
+            <motion.div className='flex justify-center items-center py-6'
+        whileHover={{scale: 1.1}}
+        whileTap={{scale: 0.9}}
+        >
+            <Button size={'xl'}>
+              <Image 
+                src={'/founder.jpeg'} 
+                alt='Founder Image' 
+                width={25} 
+                height={25}
+                className='rounded-full'/> 
+                Book a call with Mulhima
+            </Button>
+        </motion.div>
         </div>
         <div>
             <Trust/>

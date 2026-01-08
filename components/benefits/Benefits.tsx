@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { Button } from '../ui/moving-border'
 import { benefits } from '@/lib/constants/benefits'
 import ROI from '../roi/ROI'
+import { motion } from 'framer-motion'
 
 const Benefits = () => {
   return (
@@ -40,7 +41,10 @@ const Benefits = () => {
         <div className='py-24'>
           <ROI/>
         </div>
-        <div className='flex justify-center items-center py-6'>
+        <motion.div className='flex justify-center items-center py-6'
+        whileHover={{scale: 1.1}}
+        whileTap={{scale: 0.9}}
+        >
             <Button size={'xl'}>
               <Image 
                 src={'/founder.jpeg'} 
@@ -50,7 +54,7 @@ const Benefits = () => {
                 className='rounded-full'/> 
                 Book a call with Mulhima
             </Button>
-        </div>
+        </motion.div>
     </div>
   )
 }
