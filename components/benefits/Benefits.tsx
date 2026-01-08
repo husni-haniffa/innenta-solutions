@@ -2,10 +2,11 @@
 import Image from 'next/image'
 import { Button } from '../ui/moving-border'
 import { benefits } from '@/lib/constants/benefits'
+import ROI from '../roi/ROI'
 
 const Benefits = () => {
   return (
-    <div className='min-h-screen flex flex-col gap-9'>
+    <div className='min-h-screen flex flex-col gap-9 py-28' id='benefits'>
         <div className='flex justify-center items-center'>
             <header className='text-center border w-fit px-4 py-2 rounded-lg text-lg'>
               Benefits
@@ -21,7 +22,7 @@ const Benefits = () => {
         </div>
         <div className='grid grid-cols-1 md:grid-cols-3 gap-3'>
             {benefits.map((benefit) => (
-              <div key={benefit.id} className="flex flex-col justify-start items-center border rounded-lg px-6 py-8">
+              <div key={benefit.id} className="flex flex-col justify-start items-center border hover:border-blue-500 rounded-lg px-6 py-8">
                 <div className="flex flex-col gap-4 items-center text-center mb-4">
                   <div className="text-blue-500">
                     <benefit.icon size={75} strokeWidth={1.5} />
@@ -35,6 +36,9 @@ const Benefits = () => {
                 </p>
               </div>
             ))}
+        </div>
+        <div className='py-24'>
+          <ROI/>
         </div>
         <div className='flex justify-center items-center py-6'>
             <Button size={'xl'}>

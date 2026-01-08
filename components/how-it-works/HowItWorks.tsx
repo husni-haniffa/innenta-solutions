@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 const HowItWorks = () => {
   return (
-    <div className='min-h-screen flex flex-col gap-9'>
+    <div className='flex flex-col gap-9' id='howitworks'>
         <div className='flex justify-center items-center'>
           <header className='text-center border w-fit px-4 py-2 rounded-lg text-lg'>How it works</header>
         </div>

@@ -58,3 +58,26 @@ export const clients = [
         icon: Briefcase,
     },
 ];
+
+export const clientWorks = [
+    {
+        id: 1,
+        image: "/C1.jpeg"
+    },
+    {
+        id: 2,
+        image: "/C2.jpeg"
+    },
+    {
+        id: 3,
+        image: "/C3.jpeg"
+    },
+    {
+        id: 4,
+        image: "/C4.jpeg"
+    },
+    {
+        id: 5,
+        image: "/C5.jpeg"
+    },
+]

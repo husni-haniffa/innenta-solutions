@@ -114,7 +114,7 @@ export function Button({
       <div
         className={cn(
           "relative flex h-full w-full items-center justify-center gap-2 border px-4 py-2",
-          variant === "default" && "border-slate-800 bg-slate-900/80",
+          variant === "default" && "border-slate-800 bg-blue-600",
           variant === "primary" && "border-primary bg-primary/80",
           variant === "secondary" && "border-secondary bg-secondary/80",
           variant === "destructive" && "border-destructive bg-destructive/80",
