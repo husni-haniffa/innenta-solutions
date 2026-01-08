@@ -141,7 +141,8 @@ const Footer = () => {
       {/* Social icons */}
       <div className="flex gap-4 md:justify-end">
         {socials.map((media) => (
-          <Link key={media.id} href={media.href}>
+          <Link key={media.id} href={media.href}  target="_blank"
+  rel="noopener noreferrer">
             <media.icon size={22} />
           </Link>
         ))}
