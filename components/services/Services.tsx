@@ -52,17 +52,20 @@ const Services = () => {
                 return { opacity: 1, x: 0, transition: { duration: 0.6, ease: "easeOut" } }
               }
             }}
-            className='flex flex-col gap-6 px-4 py-4 rounded-xl border hover:border-blue-500'
-          >
-            <service.icon size={50} className='text-blue-500' />
-            <header className='text-2xl font-bold'>{service.title}</header>
-            <div className='grid grid-cols-3 gap-2'>
-              {service.items.map((item) => (
-                <div key={item.id} className='border rounded flex justify-center items-center py-2'>
-                  <p className='text-sm text-muted-foreground'>{item.title}</p>
-                </div>
-              ))}
-            </div>
+            className='flex flex-col gap-6 px-4 py-6 rounded-xl border hover:border-blue-500'
+          > 
+           <div className='flex items-center gap-3'>
+  <service.icon size={50} className='text-blue-500' />
+  <header className='text-2xl font-bold text-center'>{service.title}</header>
+</div>
+
+<div className='grid grid-cols-1 md:grid-cols-2 gap-2'>
+  {service.items.map((item) => (
+    <div key={item.id} className='border rounded flex justify-center items-center py-2 px-2'>
+      <p className='text-sm text-muted-foreground text-center'>{item.title}</p>
+    </div>
+  ))}
+</div>
           </motion.div>
         ))}
       </motion.div>

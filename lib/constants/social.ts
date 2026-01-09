@@ -19,6 +19,6 @@ export const socials = [
     { 
         id: 4, 
         icon: FaWhatsapp, 
-        href: "https://facebook.com/innentasolutions" 
+        href: "https://wa.me/94774256402" 
     }
 ]
