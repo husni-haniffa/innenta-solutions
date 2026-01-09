@@ -31,7 +31,7 @@ export const whyChooseUs = [
         items: [
             { icon: X, text: "High costs & complex pricing" },
             { icon: X, text: "Slower delivery timelines" },
-            { icon: X, text: "Multiple layers of communication" },
+            { icon: X, text: "Layers of communication" },
             { icon: X, text: "Limited flexibility" },
             { icon: X, text: "Rigid contracts & processes" },
         ],
