@@ -14,7 +14,7 @@ const FAQ = () => {
             <header className='text-center border w-fit px-4 py-2 rounded-lg md:text-lg'>
               FAQs
             </header>
-             <header className='text-center font-bold text-3xl md:text-4xl lg:text-6x'>
+             <header className='text-center font-bold text-3xl md:text-4xl lg:text-6xl'>
               Frequently Asked Questions
             </header>
             <p className='text-center text-sm md:text-base lg:text-xl'>
@@ -22,18 +22,18 @@ const FAQ = () => {
             </p>
         </div>
       
-        <div className=''>
+        <Accordion type="single" collapsible>
           {faqs.map((faq) => (
-                      <Accordion key={faq.id}type="single" collapsible> 
-            <AccordionItem value="item-1">
-              <AccordionTrigger className='text-sm md:text-base lg:text-xl'>{faq.question}</AccordionTrigger>
+            <AccordionItem key={faq.id} value={faq.id.toString()}>
+              <AccordionTrigger className='text-sm md:text-base lg:text-xl'>
+                {faq.question}
+              </AccordionTrigger>
               <AccordionContent className='text-sm md:text-base lg:text-xl text-muted-foreground'>
                 {faq.answer}
               </AccordionContent>
             </AccordionItem>
-          </Accordion>
-        ))}
-        </div>
+          ))}
+        </Accordion>
 
         <div className='py-8'>
           <Testimonials/>
