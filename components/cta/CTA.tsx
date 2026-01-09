@@ -21,7 +21,7 @@ const CTA = () => {
     whileHover={{scale: 1.1}}
     whileTap={{scale: 0.9}}
   >
-    <Button size={'default'} onClick={() => handleBooking()}>
+    <Button size={'lg'} onClick={() => handleBooking()}>
       <Image 
         src={'/founder.jpeg'} 
         alt='Founder Image' 
