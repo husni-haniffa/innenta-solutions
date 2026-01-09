@@ -33,13 +33,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${poppins.className} ${geistSans.variable} ${geistMono.variable} antialiased dark`}
-      >
-        <Navbar/>
-        {children}
-        <Toaster/>
-        <Footer/>
+      <body className={`${poppins.className} ${geistSans.variable} ${geistMono.variable} antialiased dark`}> 
+        <div className="flex flex-col overflow-x-clip">
+          <Navbar/>
+          <main className="container flex grow flex-col">{children}</main>
+          <Footer/>
+          <Toaster/>
+        </div>
       </body>
     </html>
   );

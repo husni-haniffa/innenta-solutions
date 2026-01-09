@@ -1,5 +1,4 @@
 import { faqs } from '@/lib/constants/faqs'
-import React from 'react'
 import {
   Accordion,
   AccordionContent,
@@ -7,35 +6,35 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion"
 import Testimonials from '../testimonials/Testimonials '
+
 const FAQ = () => {
   return (
     <div className='flex flex-col gap-9'>
-<div className='flex justify-center items-center'>
-            <header className='text-center border w-fit px-4 py-2 rounded-lg text-lg'>
+        <div className='flex flex-col gap-6 justify-center items-center'>
+            <header className='text-center border w-fit px-4 py-2 rounded-lg md:text-lg'>
               FAQs
             </header>
-        </div>
-        <div className='flex flex-col gap-6'>
-            <header className='text-center font-bold text-3xl md:text-4xl lg:text-5xl'>
+             <header className='text-center font-bold text-3xl md:text-4xl lg:text-6xl'>
               Frequently Asked Questions
             </header>
-            <p className='text-center'>
+            <p className='text-center text-sm md:text-base lg:text-xl'>
               Thoughtfully crafted perks that support long-term growth.
             </p>
         </div>
-        <div className='py-16'>
+      
+        <Accordion type="single" collapsible>
+          {faqs.map((faq) => (
+            <AccordionItem key={faq.id} value={faq.id.toString()}>
+              <AccordionTrigger className='text-sm md:text-base lg:text-xl'>
+                {faq.question}
+              </AccordionTrigger>
+              <AccordionContent className='text-sm md:text-base lg:text-xl text-muted-foreground'>
+                {faq.answer}
+              </AccordionContent>
+            </AccordionItem>
+          ))}
+        </Accordion>
 
-{faqs.map((faq) => (
-            <Accordion key={faq.id}type="single" collapsible> 
-  <AccordionItem value="item-1">
-    <AccordionTrigger className='md:text-xl'>{faq.question}</AccordionTrigger>
-    <AccordionContent className='md:text-lg text-muted-foreground'>
-      {faq.answer}
-    </AccordionContent>
-  </AccordionItem>
-</Accordion>
-        ))}
-        </div>
         <div className='py-8'>
           <Testimonials/>
         </div>
