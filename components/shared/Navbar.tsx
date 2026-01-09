@@ -38,9 +38,9 @@ const Navbar = () => {
           <div className='flex gap-2 cursor-pointer' 
             onClick={() => router.push('/')}>
             <Image 
-              src={'/innenta-solutions-logo.png'} 
+              src={'/ICON.jpg'} 
               alt='Innenta Solutions Logo' 
-              width={25} height={25}/>
+              width={25} height={25} className='w-auto h-auto rounded-full'/>
             <header className='text-lg md:text-2xl font-bold'>
               Innenta Solutions
             </header>
